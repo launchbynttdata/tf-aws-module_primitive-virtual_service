@@ -19,3 +19,8 @@ output "arn" {
   description = "ARN of the virtual service"
   value       = aws_appmesh_virtual_service.this.arn
 }
+
+output "name" {
+  description = "Name of the virtual service"
+  value       = aws_appmesh_virtual_service.this.name
+}

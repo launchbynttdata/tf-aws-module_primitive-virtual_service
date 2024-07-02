@@ -162,4 +162,5 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | ID of the virtual service |
 | <a name="output_arn"></a> [arn](#output\_arn) | ARN of the virtual service |
+| <a name="output_name"></a> [name](#output\_name) | Name of the virtual service |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -36,7 +36,7 @@ provider "random" {}
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | terraform-aws-modules/vpc/aws | 5.0.0 |
 | <a name="module_private_ca"></a> [private\_ca](#module\_private\_ca) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-private_ca | 1.0.0 |
 | <a name="module_namespace"></a> [namespace](#module\_namespace) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-private_dns_namespace | 1.0.0 |
-| <a name="module_app_mesh"></a> [app\_mesh](#module\_app\_mesh) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-appmesh | 1.0.0 |
+| <a name="module_app_mesh"></a> [app\_mesh](#module\_app\_mesh) | terraform.registry.launch.nttdata.com/module_primitive/appmesh/aws | ~> 1.0 |
 | <a name="module_private_cert"></a> [private\_cert](#module\_private\_cert) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-acm_private_cert | 1.0.0 |
 | <a name="module_virtual_node"></a> [virtual\_node](#module\_virtual\_node) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-virtual_node | 1.0.0 |
 | <a name="module_appmesh_virtual_service"></a> [appmesh\_virtual\_service](#module\_appmesh\_virtual\_service) | ../.. | n/a |
@@ -69,8 +69,10 @@ provider "random" {}
 | Name | Description |
 |------|-------------|
 | <a name="output_virtual_service_id"></a> [virtual\_service\_id](#output\_virtual\_service\_id) | ID of the Virtual Service. |
+| <a name="output_virtual_service_name"></a> [virtual\_service\_name](#output\_virtual\_service\_name) | Name of the Virtual Service. |
 | <a name="output_service_arn"></a> [service\_arn](#output\_service\_arn) | ARN of the Virtual Service |
 | <a name="output_virtual_node_name"></a> [virtual\_node\_name](#output\_virtual\_node\_name) | Name of the Virtual Node |
 | <a name="output_random_int"></a> [random\_int](#output\_random\_int) | Random Int postfix |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | VPC Id for the example |
+| <a name="output_mesh_name"></a> [mesh\_name](#output\_mesh\_name) | Name of the Mesh |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

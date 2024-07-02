@@ -49,7 +49,8 @@ module "namespace" {
 }
 
 module "app_mesh" {
-  source = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-appmesh?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/appmesh/aws"
+  version = "~> 1.0"
 
   name = local.app_mesh_name
 }
