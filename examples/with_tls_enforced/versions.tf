@@ -10,17 +10,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-output "id" {
-  description = "ID of the virtual service"
-  value       = aws_appmesh_virtual_service.this.id
-}
+terraform {
+  required_version = ">= 1.5.0, <= 1.5.5"
 
-output "arn" {
-  description = "ARN of the virtual service"
-  value       = aws_appmesh_virtual_service.this.arn
-}
-
-output "name" {
-  description = "Name of the virtual service"
-  value       = aws_appmesh_virtual_service.this.name
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+  }
 }

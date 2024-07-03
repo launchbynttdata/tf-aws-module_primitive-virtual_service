@@ -10,10 +10,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 locals {
-  random_id         = random_integer.priority.result
-  name              = "${var.naming_prefix}-vsvc-${local.random_id}"
-  virtual_node_name = "${var.naming_prefix}-node-${local.random_id}"
-  namespace_name    = "example${local.random_id}.local"
-  naming_prefix     = "${var.naming_prefix}${local.random_id}"
-  app_mesh_name     = "${var.naming_prefix}-app-mesh-${local.random_id}"
+  random_id               = random_integer.priority.result
+  naming_prefix           = "${var.logical_product_family}-${var.logical_product_service}"
+  logical_product_service = "${var.logical_product_service}-${local.random_id}"
+  name                    = "${local.naming_prefix}-vsvc-${local.random_id}"
+  virtual_node_name       = "${local.naming_prefix}-node-${local.random_id}"
+  namespace_name          = "example${local.random_id}.local"
+  app_mesh_name           = "${local.naming_prefix}-app-mesh-${local.random_id}"
 }

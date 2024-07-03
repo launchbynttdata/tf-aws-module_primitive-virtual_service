@@ -128,13 +128,13 @@ Currently, the `encrypt at transit` is not supported in terraform. There is an o
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, <= 1.5.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.28.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.67.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.56.1 |
 
 ## Modules
 
@@ -162,4 +162,5 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | ID of the virtual service |
 | <a name="output_arn"></a> [arn](#output\_arn) | ARN of the virtual service |
+| <a name="output_name"></a> [name](#output\_name) | Name of the virtual service |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

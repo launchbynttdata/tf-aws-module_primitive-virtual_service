@@ -10,10 +10,36 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-variable "naming_prefix" {
-  description = "Prefix for the provisioned resources."
+variable "logical_product_family" {
   type        = string
-  default     = "demo-app"
+  description = <<EOF
+    (Required) Name of the product family for which the resource is created.
+    Example: org_name, department_name.
+  EOF
+  nullable    = false
+
+  validation {
+    condition     = can(regex("^[_\\-A-Za-z0-9]+$", var.logical_product_family))
+    error_message = "The variable must contain letters, numbers, -, _, and .."
+  }
+
+  default = "launch"
+}
+
+variable "logical_product_service" {
+  type        = string
+  description = <<EOF
+    (Required) Name of the product service for which the resource is created.
+    For example, backend, frontend, middleware etc.
+  EOF
+  nullable    = false
+
+  validation {
+    condition     = can(regex("^[_\\-A-Za-z0-9]+$", var.logical_product_service))
+    error_message = "The variable must contain letters, numbers, -, _, and .."
+  }
+
+  default = "ecs"
 }
 
 variable "environment" {
@@ -22,18 +48,9 @@ variable "environment" {
   default     = "dev"
 }
 
-variable "environment_number" {
-  description = "The environment count for the respective environment. Defaults to 000. Increments in value of 1"
-  default     = "000"
-}
-
-variable "resource_number" {
-  description = "The resource count for the respective resource. Defaults to 000. Increments in value of 1"
-  default     = "000"
-}
-
 variable "region" {
   description = "AWS Region in which the infra needs to be provisioned"
+  type        = string
   default     = "us-east-2"
 }
 
@@ -41,16 +58,19 @@ variable "region" {
 ### VPC related variables
 
 variable "vpc_cidr" {
+  type    = string
   default = "10.1.0.0/16"
 }
 
 variable "private_subnets" {
   description = "List of private subnet cidrs"
+  type        = list(string)
   default     = ["10.1.1.0/24", "10.1.2.0/24", "10.1.3.0/24"]
 }
 
 variable "availability_zones" {
   description = "List of availability zones for the VPC"
+  type        = list(string)
   default     = ["us-east-2a", "us-east-2b", "us-east-2c"]
 }
 
@@ -58,6 +78,7 @@ variable "availability_zones" {
 
 variable "tls_enforce" {
   description = "Whether to enforce TLS on the backends"
+  type        = bool
   default     = false
 }
 
@@ -77,6 +98,7 @@ variable "port" {
 
 variable "health_check_path" {
   description = "Destination path for the health check request"
+  type        = string
   default     = "/"
 }
 
