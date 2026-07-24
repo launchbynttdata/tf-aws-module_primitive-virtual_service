@@ -27,5 +27,5 @@ func TestVirtualServiceModule(t *testing.T) {
 		}).
 		Build()
 
-	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestVirtualService)
+	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestComposableVirtualServiceReadonly)
 }
