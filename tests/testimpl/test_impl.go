@@ -14,8 +14,8 @@ import (
 
 func TestVirtualService(t *testing.T, ctx types.TestContext) {
 	appmeshClient := appmesh.NewFromConfig(GetAWSConfig(t))
-	serviceName := terraform.Output(t, ctx.TerratestTerraformOptions(), "virtual_service_name")
-	meshName := terraform.Output(t, ctx.TerratestTerraformOptions(), "mesh_name")
+	serviceName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "virtual_service_name")
+	meshName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "mesh_name")
 
 	_, err := appmeshClient.DescribeMesh(context.TODO(), &appmesh.DescribeMeshInput{MeshName: &meshName})
 	if err != nil {
