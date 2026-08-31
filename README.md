@@ -122,19 +122,13 @@ If `make check` target is successful, developer is good to commit the code to pr
 # Know Issues
 Currently, the `encrypt at transit` is not supported in terraform. There is an open issue for this logged with Hashicorp - https://github.com/hashicorp/terraform-provider-aws/pull/26987
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.73.0 |
 
 ## Modules
 
@@ -150,17 +144,17 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | Name of the virtual service | `string` | n/a | yes |
 | <a name="input_app_mesh_name"></a> [app\_mesh\_name](#input\_app\_mesh\_name) | Id of the App Mesh where the virtual service will reside | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | Name of the virtual service | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of custom tags to be attached to this resource | `map(string)` | `{}` | no |
 | <a name="input_virtual_node_name"></a> [virtual\_node\_name](#input\_virtual\_node\_name) | Name of the virtual Node to associate with the virtual service. Conflicts with virtual\_router | `string` | `""` | no |
 | <a name="input_virtual_router_name"></a> [virtual\_router\_name](#input\_virtual\_router\_name) | Name of the virtual Router to associate with the virtual service. Conflicts with virtual\_node | `string` | `""` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | A map of custom tags to be attached to this resource | `map(string)` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_id"></a> [id](#output\_id) | ID of the virtual service |
 | <a name="output_arn"></a> [arn](#output\_arn) | ARN of the virtual service |
+| <a name="output_id"></a> [id](#output\_id) | ID of the virtual service |
 | <a name="output_name"></a> [name](#output\_name) | Name of the virtual service |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

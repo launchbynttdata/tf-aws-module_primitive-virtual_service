@@ -27,5 +27,5 @@ func TestVirtualServiceModule(t *testing.T) {
 		}).
 		Build()
 
-	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestVirtualService)
+	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestComposableVirtualService)
 }
